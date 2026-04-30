@@ -13,7 +13,14 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://donation-sync.vercel.app",
+    "https://donation-sync-453opir13-sujitha1526s-projects.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 // Connect to MongoDB
