@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 7%;
+    --foreground: 210 40% 96%;
+
+    --card: 230 25% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 230 25% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 25% 16%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 230 20% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 172 66% 50%;
+    --accent-foreground: 230 25% 7%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 20% 18%;
+    --input: 230 20% 18%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 230 25% 9%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 25% 14%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 230 20% 16%;
+    --sidebar-ring: 262 83% 58%;
+
+    /* Custom accent colors */
+    --success: 152 69% 47%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Gradient tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(280, 87%, 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(172, 66%, 50%), hsl(190, 74%, 58%));
+    --gradient-warm: linear-gradient(135deg, hsl(38, 92%, 50%), hsl(22, 90%, 55%));
+    --gradient-success: linear-gradient(135deg, hsl(152, 69%, 47%), hsl(172, 66%, 50%));
+
+    --shadow-glow: 0 0 20px hsl(262 83% 58% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  .glass {
+    backdrop-filter: blur(12px);
+    background: hsl(230 25% 10% / 0.7);
+    border: 1px solid hsl(230 20% 18% / 0.5);
+  }
+}
